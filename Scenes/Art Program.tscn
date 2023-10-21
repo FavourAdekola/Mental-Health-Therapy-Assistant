@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd31ndnrsrjid"]
+
+[ext_resource type="Script" path="res://Mental-Health-Therapy-Assistant/Scripts/Art Program.gd" id="1_sypth"]
+[ext_resource type="FontFile" uid="uid://dqadd8di83q7c" path="res://Mental-Health-Therapy-Assistant/Sprites/fonts/Cave-Story.ttf" id="2_ft461"]
+[ext_resource type="Script" path="res://Mental-Health-Therapy-Assistant/Scripts/Canvas.gd" id="3_km7m4"]
+
+[sub_resource type="Theme" id="Theme_xie30"]
+default_font = ExtResource("2_ft461")
+default_font_size = 24
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sypth")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -502.0
+offset_bottom = -573.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Show" type="Label" parent="Panel/Button"]
+visible = false
+layout_mode = 0
+offset_left = 87.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 29.0
+theme = SubResource("Theme_xie30")
+text = "PICK COLOR"
+
+[node name="Hide" type="Label" parent="Panel/Button"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 29.0
+theme = SubResource("Theme_xie30")
+text = "HIDE WHEEL"
+
+[node name="ColorPicker" type="ColorPicker" parent="Panel"]
+z_index = 1
+layout_mode = 0
+offset_left = 87.0
+offset_top = 71.0
+offset_right = 333.0
+offset_bottom = 433.0
+edit_alpha = false
+picker_shape = 2
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+
+[node name="Canvas" type="Sprite2D" parent="Panel"]
+z_as_relative = false
+centered = false
+script = ExtResource("3_km7m4")
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

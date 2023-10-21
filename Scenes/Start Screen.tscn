@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxfpaj828ye5y"]
+
+[ext_resource type="Script" path="res://Mental-Health-Therapy-Assistant/Scripts/Start Screen.gd" id="1_0m66d"]
+[ext_resource type="FontFile" uid="uid://dqadd8di83q7c" path="res://Mental-Health-Therapy-Assistant/Sprites/fonts/Cave-Story.ttf" id="2_dlqou"]
+
+[sub_resource type="Theme" id="Theme_gr37n"]
+default_font = ExtResource("2_dlqou")
+default_font_size = 128
+
+[sub_resource type="Theme" id="Theme_slu1c"]
+default_font = ExtResource("2_dlqou")
+default_font_size = 48
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0m66d")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel3" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -34.0
+offset_right = 348.0
+offset_bottom = 166.0
+rotation = 0.785398
+
+[node name="Panel4" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 736.0
+offset_top = -197.0
+offset_right = 936.0
+offset_bottom = 3.0
+rotation = 0.785398
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 115.0
+offset_right = 811.0
+offset_bottom = 281.0
+theme = SubResource("Theme_gr37n")
+text = "Virtual Therapy 
+       Assistant"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 480.0
+offset_right = 420.0
+offset_bottom = 518.0
+theme = SubResource("Theme_slu1c")
+text = " Start "
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 462.0
+offset_right = 340.0
+offset_bottom = 662.0
+rotation = 0.785398
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 298.0
+offset_right = 851.0
+offset_bottom = 498.0
+rotation = 0.785398
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
